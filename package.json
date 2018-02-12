@@ -1,0 +1,36 @@
+{
+  "name": "canvas-syncing-assignment-part1",
+  "version": "1.0.0",
+  "description": "Part one of an intro to canvas syncing",
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "pretest": "eslint ./src --fix",
+    "test": "echo \"Tests complete\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KMTaylor023/canvas-syncing-assignment-part1.git"
+  },
+  "keywords": [
+    "Dope-stuff",
+    "wow",
+    "canvas",
+    "synchronized",
+    "awesome"
+  ],
+  "author": "Keegan Taylor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KMTaylor023/canvas-syncing-assignment-part1/issues"
+  },
+  "homepage": "https://github.com/KMTaylor023/canvas-syncing-assignment-part1#readme",
+  "dependencies": {
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
+}

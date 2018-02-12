@@ -2,12 +2,44 @@
 <html lang="en">
 <head>
     <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script type="text/babel" >
-        "use strict";
-    
+      "use strict";
+      
+      const valueText = "value: ";
+
+
+      const onValue = (sock) =>{
+        const socket = sock;
+        const valueP = document.querySelector('#val');
+        
+        socket.on('value', (data) =>{
+          valueP.innerHTML = valueText + data.value
+        });
+      };
+
+      const emitIncrement = (increment, sock) =>{
+        const socket = sock;
+        
+        socket.emit('increment', {increment});
+      };
+
+      const init = () =>{
+        const socket = io.connect();
+        
+        onValue(socket);
+          
+        //increase every second
+        socket.on('connect', () =>{
+          setInterval(() =>{emitIncrement(5,socket)}, 1000);
+        });
+        
+      };
+
+      window.onload = init;
     </script>
 </head>
 <body>
-
+<p id="val">value: 0</p>
 </body>
 </html>
